@@ -8,7 +8,15 @@
 import differenceInDays from 'date-fns/differenceInDays';
 
 export function formatPrice(price) {
-  return `$${price / 100}`;
+  return price ? `$${price / 100}` : "";
+}
+
+export function formatLabel(variant) {
+    switch (variant) {
+      case "on-sale": return "Sale";
+      case "new-release": return "Just released!"
+      default: return "";
+    }
 }
 
 export function pluralize(string, num) {
